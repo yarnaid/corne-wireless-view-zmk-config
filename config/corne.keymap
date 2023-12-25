@@ -22,6 +22,51 @@
             bindings = <&kp LS(LA(LC(LG(E))))>;
             key-positions = <38 37>;
         };
+
+        esc-left {
+            bindings = <&kp ESC>;
+            key-positions = <16 15>;
+        };
+
+        del_word {
+            bindings = <&kp RA(BACKSPACE)>;
+            key-positions = <18 19 20>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <19 20 21>;
+        };
+
+        leftBLOCK {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <5 4>;
+        };
+
+        rightBrk {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <6 7>;
+        };
+
+        leftPar {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <16 17>;
+        };
+
+        rightPar {
+            bindings = <&kp RPAR>;
+            key-positions = <18 19>;
+        };
+
+        leftBrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <28 29>;
+        };
+
+        rightBrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <30 31>;
+        };
     };
 
     behaviors {
