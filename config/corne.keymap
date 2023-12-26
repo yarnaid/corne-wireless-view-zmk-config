@@ -105,6 +105,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <800>;
         };
+
+        douplePlusHold: douplePlusHold {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOUPLEPLUSHOLD";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(SPACE))>, <&kpAndKp LEFT_CONTROL LC(SPACE)>;
+        };
     };
 
     keymap {
@@ -118,10 +125,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                              &kp Q  &kp W  &kpAndKpLong LS(LG(NUMBER_3)) E  &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
-&kpAndKp LEFT_CONTROL LS(LG(SPACE))  &kp A  &kp S  &kp D                            &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
-&kpAndCaps LSHFT 0                   &kp Z  &kp X  &kp C                            &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
-                                                   &kp LGUI                         &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
+&kp TAB             &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
+&douplePlusHold     &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
+&kpAndCaps LSHFT 0  &kp Z  &kp X  &kp C     &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
+                                  &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
             >;
         };
 
