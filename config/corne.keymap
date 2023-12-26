@@ -107,11 +107,11 @@
             flavor = "tap-preferred";
         };
 
-        douplePlusHold: douplePlusHold {
+        doublePlusHold: doublePlusHold {
             compatible = "zmk,behavior-tap-dance";
-            label = "DOUPLEPLUSHOLD";
+            label = "DOUBLEPLUSHOLD";
             #binding-cells = <0>;
-            bindings = <&kp LS(LG(SPACE))>, <&kpAndKp LEFT_CONTROL LC(SPACE)>;
+            bindings = <&kp LC(SPACE)>, <&kpAndKp LEFT_CONTROL LS(LG(SPACE))>;
         };
     };
 
@@ -127,7 +127,7 @@
 
             bindings = <
 &kp TAB             &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
-&douplePlusHold     &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
+&doublePlusHold     &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
 &kpAndCaps LSHFT 0  &kp Z  &kp X  &kp C     &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
                                   &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
             >;
