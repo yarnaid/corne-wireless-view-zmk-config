@@ -114,13 +114,13 @@
             bindings = <&kp LC(SPACE)>, <&kpAndKp LEFT_CONTROL LS(LG(SPACE))>;
         };
 
-        EcsOrBT: EcsOrBT {
+        KpOrBT: KpOrBT {
             compatible = "zmk,behavior-hold-tap";
-            label = "ECSORBT";
-            bindings = <&bt>, <&gresc>;
+            label = "KPORBT";
+            bindings = <&bt>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <3000>;
+            tapping-term-ms = <5000>;
             flavor = "tap-preferred";
         };
     };
@@ -136,7 +136,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB             &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
+&KpOrBT BT_CLR TAB  &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
 &doublePlusHold     &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
 &kpAndCaps LSHFT 0  &kp Z  &kp X  &kp C     &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
                                   &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
