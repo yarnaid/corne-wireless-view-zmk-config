@@ -113,16 +113,6 @@
             #binding-cells = <0>;
             bindings = <&kp LC(SPACE)>, <&kpAndKp LEFT_CONTROL LS(LG(SPACE))>;
         };
-
-        transAndClProf: transAndClProf {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TRANSANDCLPROF";
-            bindings = <&bt>, <&trans>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <501>;
-            flavor = "tap-preferred";
-        };
     };
 
     keymap {
@@ -151,10 +141,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB                  &kp N1        &kp N2      &kp N3                 &kp N4                    &kp N5                   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
-&trans                   &bt BT_SEL 0  &bt BT_PRV  &bt BT_NXT             &transAndClProf BT_CLR 0  &out OUT_TOG             &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RALT  &kp RSHFT
-&kpAndCaps LEFT_SHIFT 0  &trans        &trans      &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(B))))     &kp LS(LA(LC(LG(C))))    &trans    &trans    &trans    &trans     &trans    &trans
-                                                   &kp LGUI               &trans                    &kp SPACE                &kp RET   &trans    &kp RALT
+&kp TAB                  &kp N1        &kp N2      &kp N3                 &kp N4                 &kp N5                   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
+&trans                   &bt BT_SEL 0  &bt BT_PRV  &bt BT_NXT             &bt BT_CLR             &out OUT_TOG             &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RALT  &kp RSHFT
+&kpAndCaps LEFT_SHIFT 0  &trans        &trans      &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(C))))    &trans    &trans    &trans    &trans     &trans    &trans
+                                                   &kp LGUI               &trans                 &kp SPACE                &kp RET   &trans    &kp RALT
             >;
         };
 
