@@ -107,20 +107,18 @@
             flavor = "tap-preferred";
         };
 
-        playPauseAndHomeRow: playPauseAndHomeRow {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PLAYPAUSEANDHOMEROW";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LC(K_PLAY_PAUSE)>,
-                <&kpAndKp LEFT_CONTROL LS(LG(SPACE))>;
-        };
-
         doubleBT: doubleBT {
             compatible = "zmk,behavior-tap-dance";
             label = "DOUBLEBT";
             #binding-cells = <0>;
             bindings = <&trans>, <&bt BT_CLR>;
+        };
+
+        playPauseAndHomeRow: playPauseAndHomeRow {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PLAYPAUSEANDHOMEROW";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp LS(LG(SPACE))>, <&gresc>;
         };
     };
 
