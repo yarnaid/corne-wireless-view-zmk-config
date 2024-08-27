@@ -114,9 +114,9 @@
             bindings = <&trans>, <&bt BT_CLR>;
         };
 
-        playPauseAndHomeRow: playPauseAndHomeRow {
+        ctrlHomerowEsc: ctrlHomerowEsc {
             compatible = "zmk,behavior-tap-dance";
-            label = "PLAYPAUSEANDHOMEROW";
+            label = "CTRLHOMEROWESC";
             #binding-cells = <0>;
             bindings = <&kp LCTRL>, <&kp LS(LG(SPACE))>, <&gresc>;
         };
@@ -133,10 +133,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB               &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
-&playPauseAndHomeRow  &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
-&kpAndCaps LSHFT 0    &kp Z  &kp X  &kp C     &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
-                                    &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
+&kp TAB             &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
+&ctrlHomerowEsc     &kp A  &kp S  &kp D     &kp F                            &kp G        &kp H    &kp J                 &kp K      &kp L    &kp SEMI  &kp SQT
+&kpAndCaps LSHFT 0  &kp Z  &kp X  &kp C     &kp V                            &kp B        &kp N    &kp M                 &kp COMMA  &kp DOT  &kp FSLH  &gresc
+                                  &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
             >;
         };
 
