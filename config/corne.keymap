@@ -141,6 +141,7 @@
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
             display-name = "Base";
             bindings = <
 &kp TAB             &kp Q  &kp W  &kp E     &kpAndKpLong LG(LS(NUMBER_4)) R  &kp T        &kp Y    &kp U                 &kp I      &kp O    &kp P     &kp BSPC
@@ -149,19 +150,20 @@
                                   &kp LGUI  &moAndKp 1 LS(LA(LC(LG(T))))     &kp SPACE    &kp RET  &moAndKp 2 RG(SPACE)  &kp RALT
             >;
         };
-        
+
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BTG |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
+
             display-name = "Lower";
             bindings = <
-&kp TAB                  &kp N1        &kp N2      &kp N3                 &kp N4                 &kp N5                   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
-&trans                   &bt BT_SEL 0  &bt BT_PRV  &bt BT_NXT             &doubleBT              &out OUT_TOG             &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RALT  &kp RSHFT
-&kpAndCaps LEFT_SHIFT 0  &trans        &trans      &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(C))))    &trans    &trans    &trans    &trans     &trans    &trans
-                                                   &kp LGUI               &trans                 &kp SPACE                &kp RET   &trans    &kp RALT
+&kp TAB                  &kp N1  &kp N2  &kp N3                 &kp N4                 &kp N5                   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp BSPC
+&trans                   &trans  &trans  &trans                 &doubleBT              &out OUT_TOG             &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RALT  &kp RSHFT
+&kpAndCaps LEFT_SHIFT 0  &trans  &trans  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(C))))    &trans    &trans    &trans    &trans     &trans    &trans
+                                         &kp LGUI               &trans                 &kp SPACE                &kp RET   &trans    &kp RALT
             >;
         };
 
@@ -171,6 +173,7 @@
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
+
             display-name = "Raise";
             bindings = <
 &kp TAB              &kp EXCL  &kp AT  &kp HASH    &kp DLLR           &kp PRCNT       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
@@ -178,6 +181,24 @@
 &kpAndCaps LSHIFT 0  &trans    &trans  &kp C_PREV  &kp C_PP           &kp C_NEXT      &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                                        &kp LGUI    &trans             &kp SPACE       &kp RET    &trans     &kp RALT
             >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &bt BT_CLR
+                                    &trans        &trans        &trans          &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        double {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
